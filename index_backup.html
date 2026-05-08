@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>여명: 빛이 시작되는 순간 — 태성실용음악학원 정기연주회</title>
+  <meta name="description" content="2026 태성실용음악학원 정기연주회 — 여명: 빛이 시작되는 순간. 출연진, 셋리스트 소개 페이지입니다." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loading-bar"><div class="loading-bar-inner"></div></div>
+  <div class="loading-text">Loading "여명"</div>
+  <div class="loading-corner-tl"></div>
+  <div class="loading-corner-br"></div>
+</div>
+
+<!-- STAR BACKGROUND -->
+<div id="star-canvas"></div>
+
+<!-- GLOW LINE -->
+<div id="glow-line">
+  <div class="glow-line-base"></div>
+  <div class="glow-orb">
+    <div class="glow-orb-inner1"></div>
+    <div class="glow-orb-inner2"></div>
+    <div class="glow-orb-inner3"></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <img src="images/poster.jpg" alt="여명: 빛이 시작되는 순간 정기연주회 포스터"
+           id="hero-img" onload="onHeroLoad()" onerror="onHeroLoad()" />
+    </div>
+  </section>
+
+  <!-- CAST -->
+  <section id="cast">
+    <div class="container">
+      <div class="cast-header reveal">
+        <h2 class="section-title large">Today's Cast</h2>
+        <div class="title-divider"></div>
+        <div class="cast-leads">
+          <div class="cast-lead-item" onclick="openModal('images/ji_taeseong.png','지태성','General Producer')">
+            <div class="cast-avatar">
+              <img src="images/ji_taeseong.png" alt="지태성" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&q=80'" />
+            </div>
+            <div>
+              <span class="cast-role">General Producer</span>
+              <span class="cast-name">지태성</span>
+              <span class="cast-sub">태성실용음악학원 원장</span>
+            </div>
+          </div>
+          <div class="cast-lead-item" onclick="openModal('images/박용신_선생님.jpg','박용신','MC')">
+            <div class="cast-avatar">
+              <img src="images/박용신_선생님.jpg" alt="박용신" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&q=80'" />
+            </div>
+            <div>
+              <span class="cast-role">MC</span>
+              <span class="cast-name">박용신</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cast-categories">
+
+        <!-- Vocal -->
+        <div class="reveal">
+          <h3 class="cast-category-title"><span class="part-label">Part.</span>Vocal</h3>
+          <div class="cast-members-grid" id="cast-vocal"></div>
+        </div>
+
+        <!-- Drum -->
+        <div class="reveal">
+          <h3 class="cast-category-title"><span class="part-label">Part.</span>Drum</h3>
+          <div class="cast-members-grid" id="cast-drum"></div>
+        </div>
+
+        <!-- Piano -->
+        <div class="reveal">
+          <h3 class="cast-category-title"><span class="part-label">Part.</span>Piano</h3>
+          <div class="cast-members-grid" id="cast-piano"></div>
+        </div>
+
+        <!-- Guitar -->
+        <div class="reveal">
+          <h3 class="cast-category-title"><span class="part-label">Part.</span>Guitar</h3>
+          <div class="cast-members-grid" id="cast-guitar"></div>
+        </div>
+
+        <!-- Bass -->
+        <div class="reveal">
+          <h3 class="cast-category-title"><span class="part-label">Part.</span>Bass</h3>
+          <div class="cast-members-grid" id="cast-bass"></div>
+        </div>
+
+        <!-- Special Session -->
+        <div class="reveal">
+          <h3 class="cast-category-title"><span class="part-label">Part.</span>Special Session Teacher</h3>
+          <div class="cast-members-grid" id="cast-special"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER 1 -->
+  <section class="banner">
+    <div class="banner-bg"></div>
+    <div class="container">
+      <div class="banner-content">
+        <p class="banner-text">무대 위의 감동을 내 일상으로,<br class="mobile-br" /><span class="accent">태성실용음악학원</span> 수강 알아보기</p>
+        <div class="banner-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETLIST PART 1 -->
+  <section class="setlist-section">
+    <div class="container-md">
+      <div class="setlist-title-wrap reveal">
+        <h2 class="setlist-title"><span>Setlist <span class="divider-char">|</span> Part 1</span></h2>
+        <div class="setlist-divider"></div>
+      </div>
+      <div class="setlist-list" id="setlist1"></div>
+    </div>
+  </section>
+
+  <!-- BANNER 2 -->
+  <section class="banner">
+    <div class="banner-bg"></div>
+    <div class="container">
+      <div class="banner-content">
+        <p class="banner-text">무대 위의 감동을 내 일상으로,<br class="mobile-br" /><span class="accent">태성실용음악학원</span> 수강 알아보기</p>
+        <div class="banner-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETLIST PART 2 -->
+  <section class="setlist-section">
+    <div class="container-md">
+      <div class="setlist-title-wrap reveal">
+        <h2 class="setlist-title"><span>Setlist <span class="divider-char">|</span> Part 2</span></h2>
+        <div class="setlist-divider"></div>
+      </div>
+      <div class="setlist-list" id="setlist2"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        <span>2026 태성실용음악학원 정기연주회</span>
+        <span class="footer-divider">|</span>
+        <span>여명: 빛이 시작되는 순간</span>
+      </p>
+      <p class="copyright">© 2026 Taesung Music Academy. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div><!-- /main-content -->
+
+<!-- IMAGE MODAL -->
+<div id="img-modal" onclick="closeModal()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-avatar">
+      <img id="modal-img" src="" alt="" />
+    </div>
+    <div>
+      <span class="modal-role" id="modal-role"></span>
+      <h3 class="modal-name" id="modal-name"></h3>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────
+const fallbackImgs = {
+  Vocal:   'https://images.unsplash.com/photo-1580926243416-acc2e15df0c3?w=200&q=80',
+  Drum:    'https://images.unsplash.com/photo-1553907565-17a93ff8d368?w=200&q=80',
+  Piano:   'https://images.unsplash.com/photo-1699631192621-9c8eaf19f317?w=200&q=80',
+  Guitar:  'https://images.unsplash.com/photo-1605971230876-a6934b14deaa?w=200&q=80',
+  Bass:    'https://images.unsplash.com/photo-1480700046546-dfee380a7bd8?w=200&q=80',
+  Special: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&q=80',
+};
+
+const memberImgMap = {
+  '박용신':           'images/박용신_선생님.jpg',
+  '테디':             'images/teddy_3-1.png',
+  '김하나린 (Vocal)': 'images/kim_hanarin.png',
+  '박성환 (Guitar)':  'images/박성환_선생님.jpg',
+  '김윤상 (Bass)':    'images/김윤상_선생님.jpg',
+  '강유겸':           'images/강유겸_(피아노).png',
+  '강효린':           'images/강효린_(기타).jpg',
+  '김민정':           'images/김민정_(기타).jpg',
+  '김유준':           'images/김유준_(드럼).jpg',
+  '김준현':           'images/김준현_(피아노).jpg',
+  '김지유':           'images/김지유_(드럼).jpg',
+  '나성현':           'images/나성현_(기타).png',
+  '김정혜':           'images/김정혜_(드럼).jpg',
+};
+
+const castData = [
+  { id:'vocal',   cat:'Vocal',   fbKey:'Vocal',
+    members:['송세린','박용신','박태훈','박희완','신준환','용복동','이다솔','이호재','테디','최아윤','최예준','홍아인'] },
+  { id:'drum',    cat:'Drum',    fbKey:'Drum',
+    members:['김유준','김정혜','김지유','김태형','박태훈','신민호','심교임','양지웅','염미지','윤진석','이서윤','이지영','이진서','장용석','정민기','정용석','추성민','최한빈','한현미'] },
+  { id:'piano',   cat:'Piano',   fbKey:'Piano',
+    members:['강유겸','김준현','박지은','윤선웅','이다솔'] },
+  { id:'guitar',  cat:'Guitar',  fbKey:'Guitar',
+    members:['강효린','김민정','김유건','나성현','손지우','윤진석','테디','최웅'] },
+  { id:'bass',    cat:'Bass',    fbKey:'Bass',
+    members:['서예지','송승환','오율도','유정욱','이민준','최예준'] },
+  { id:'special', cat:'Special Session Teacher', fbKey:'Special',
+    members:['김하나린 (Vocal)','홍은택 (Piano)','박성환 (Guitar)','김윤상 (Bass)'] },
+];
+
+const setlist1 = [
+  { title:'그대에게',      members:[{pos:'Vocal',name:'이호재'},{pos:'Drum',name:'이진서'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'박성환, 테디'},{pos:'Bass',name:'최예준'}] },
+  { title:'romeo n juliet',members:[{pos:'Vocal',name:'김하나린, 용복동'},{pos:'Drum',name:'정민기'},{pos:'Piano',name:'이다솔'},{pos:'Guitar',name:'박성환'},{pos:'Bass',name:'유정욱'}] },
+  { title:'Glory day',     members:[{pos:'Vocal',name:'신준환'},{pos:'Drum',name:'김예형'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'박성환, 강효린'},{pos:'Bass',name:'이민준'}] },
+  { title:'비와 당신',     members:[{pos:'Vocal',name:'테디'},{pos:'Drum',name:'정용석'},{pos:'Piano',name:'박지은'},{pos:'Guitar',name:'박성환, 테디'},{pos:'Bass',name:'서예지'}] },
+  { title:'너라는 별',     members:[{pos:'Vocal',name:'송세린'},{pos:'Drum',name:'박태훈'},{pos:'Piano',name:'윤선웅'},{pos:'Guitar',name:'나성현, 최웅'},{pos:'Bass',name:'송승환'}] },
+  { title:'비밀번호 486',  members:[{pos:'Vocal',name:'최아윤, 홍아인'},{pos:'Drum',name:'김지유'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'나성현, 박성환'},{pos:'Bass',name:'김윤상'}] },
+  { title:'예뻤어',        members:[{pos:'Vocal',name:'이다솔'},{pos:'Drum',name:'추성민'},{pos:'Piano',name:'강유겸'},{pos:'Guitar',name:'박성환, 강효린'},{pos:'Bass',name:'서예지'}] },
+  { title:'빵빵한 내 청춘',members:[{pos:'Vocal',name:'테디'},{pos:'Drum',name:'한현미'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'박성환'},{pos:'Bass',name:'김윤상'}] },
+  { title:'동반자',        members:[{pos:'Vocal',name:'신준환'},{pos:'Drum',name:'염미지'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'박성환'},{pos:'Bass',name:'김윤상'}] },
+  { title:'사랑하게 될거야',members:[{pos:'Vocal',name:'최아윤'},{pos:'Drum',name:'최한빈'},{pos:'Guitar',name:'김유건, 테디'},{pos:'Bass',name:'오율도'}] },
+];
+
+const setlist2 = [
+  { title:'사람이 꽃보다 아름다워',members:[{pos:'Vocal',name:'테디'},{pos:'Drum',name:'김정혜'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'박성환'},{pos:'Bass',name:'김윤상'}] },
+  { title:'나야나',               members:[{pos:'Vocal',name:'박희완'},{pos:'Drum',name:'장용석'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'박성환'},{pos:'Bass',name:'김윤상'}] },
+  { title:'Love me or leave me',  members:[{pos:'Vocal',name:'박용신'},{pos:'Drum',name:'이지영'},{pos:'Piano',name:'김준현, 홍은택'},{pos:'Guitar',name:'박성환, 윤진석'},{pos:'Bass',name:'김윤상'}] },
+  { title:'나에게 닿기를',        members:[{pos:'Vocal',name:'이호재'},{pos:'Drum',name:'이서윤'},{pos:'Piano',name:'박지은'},{pos:'Guitar',name:'나성현, 김민정'},{pos:'Bass',name:'오율도'}] },
+  { title:'너에게 난 나에게 넌',  members:[{pos:'Vocal',name:'이다솔'},{pos:'Drum',name:'심교임'},{pos:'Piano',name:'이다솔'},{pos:'Guitar',name:'박성환, 강효린'},{pos:'Bass',name:'유정욱'}] },
+  { title:'This Love',            members:[{pos:'Vocal',name:'용복동'},{pos:'Drum',name:'윤진석'},{pos:'Piano',name:'강유겸'},{pos:'Guitar',name:'박성환, 강효린'},{pos:'Bass',name:'김윤상'}] },
+  { title:'위잉위잉',             members:[{pos:'Vocal',name:'최예준'},{pos:'Drum',name:'양지웅'},{pos:'Guitar',name:'강효린, 손지우'},{pos:'Bass',name:'유정욱'}] },
+  { title:'O+O',                  members:[{pos:'Vocal',name:'이다솔'},{pos:'Drum',name:'정민기'},{pos:'Piano',name:'김준현'},{pos:'Guitar',name:'강효린'},{pos:'Bass',name:'최예준'}] },
+  { title:'고민중독',             members:[{pos:'Vocal',name:'최아윤'},{pos:'Drum',name:'김유준'},{pos:'Piano',name:'홍은택'},{pos:'Guitar',name:'강효린, 나성현'},{pos:'Bass',name:'김윤상'}] },
+  { title:'Hollywood Movie star', members:[{pos:'Vocal',name:'용복동'},{pos:'Drum',name:'정민기'},{pos:'Guitar',name:'강효린'},{pos:'Bass',name:'유정욱'}] },
+  { title:'Hi Bully',             members:[{pos:'Vocal',name:'김하나린'},{pos:'Drum',name:'박태훈'},{pos:'Piano',name:'김준현, 홍은택'},{pos:'Guitar',name:'박성환, 강효린'},{pos:'Bass',name:'송승환'}] },
+];
+
+// ── STARS ────────────────────────────────────────────
+(function() {
+  const canvas = document.getElementById('star-canvas');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 1.5 + 0.5;
+    const dur  = (Math.random() * 4 + 3).toFixed(2);
+    const del  = (Math.random() * 5).toFixed(2);
+    s.style.cssText = `left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;width:${size.toFixed(2)}px;height:${size.toFixed(2)}px;--dur:${dur}s;--delay:${del}s;`;
+    canvas.appendChild(s);
+  }
+})();
+
+// ── CAST GRID RENDER ─────────────────────────────────
+castData.forEach(function(cat) {
+  const grid = document.getElementById('cast-' + cat.id);
+  if (!grid) return;
+  cat.members.forEach(function(name) {
+    const img = memberImgMap[name] || fallbackImgs[cat.fbKey];
+    const el = document.createElement('div');
+    el.className = 'cast-member';
+    el.setAttribute('onclick', `openModal('${img}','${name}','${cat.cat}')`);
+    el.innerHTML = `<div class="member-avatar"><img src="${img}" alt="${name}" onerror="this.src='${fallbackImgs[cat.fbKey]}'" /></div><span class="member-name">${name}</span>`;
+    grid.appendChild(el);
+  });
+});
+
+// ── SETLIST RENDER ────────────────────────────────────
+function renderSetlist(data, containerId) {
+  const el = document.getElementById(containerId);
+  data.forEach(function(song, idx) {
+    const num = String(idx + 1).padStart(2, '0');
+    const tags = song.members.map(function(m) {
+      return `<div class="song-member-tag"><span class="pos">${m.pos}</span><span class="name">${m.name}</span></div>`;
+    }).join('');
+    el.innerHTML += `<div class="song-card reveal"><div class="song-card-bar"></div><div class="song-number">${num}</div><div class="song-body"><h3 class="song-title">${song.title}</h3><div class="song-members">${tags}</div></div></div>`;
+  });
+}
+renderSetlist(setlist1, 'setlist1');
+renderSetlist(setlist2, 'setlist2');
+
+// ── MODAL ────────────────────────────────────────────
+function openModal(src, name, role) {
+  document.getElementById('modal-img').src = src;
+  document.getElementById('modal-name').textContent = name;
+  document.getElementById('modal-role').textContent = role;
+  document.getElementById('img-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('img-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+// ── LOADING ───────────────────────────────────────────
+var heroLoaded = false;
+function onHeroLoad() {
+  if (heroLoaded) return;
+  heroLoaded = true;
+  revealMain();
+}
+var safetyTimer = setTimeout(revealMain, 5000);
+function revealMain() {
+  clearTimeout(safetyTimer);
+  var ls = document.getElementById('loading-screen');
+  var mc = document.getElementById('main-content');
+  ls.classList.add('fade-out');
+  mc.classList.add('visible');
+  setTimeout(function() { ls.classList.add('hidden'); }, 450);
+}
+
+// ── SCROLL REVEAL ─────────────────────────────────────
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '-50px' });
+
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+}
+// Re-observe after dynamic content inserted
+setTimeout(initReveal, 100);
+</script>
+</body>
+</html>
