@@ -306,15 +306,17 @@
       , cat: 'Piano', fbKey: 'Piano', members: ['강유겸', '김준현', '박지은', '윤선웅', '이다솔']
     }, {
       id: 'guitar',
-      cat: 'Guitar', fbKey: 'Guitar', members: ['강효린', '김민정', '김유건', '나성현', '손지우', '윤진석', '테디', '최웅']
+      cat: 'Guitar', fbKey: 'Guitar', members: ['강효린', '김민정', '김유건', '나성현', '손지우', '윤진석', '테디']
     }, {
       id: 'bass', cat: 'Bass', fbKey: 'Bass', members: ['서예지', '송승환', '오율도', '유정욱', '이민준', '최예준']
     }, {
-      id: 'special', cat: 'Special Session Teacher', fbKey: 'Special', members: ['김하나린
-        (Vocal)', '홍은택(Piano)' , '박성환(Guitar)' , '김윤상(Bass)' ] }, ]; const setlist1=[ { title: '그대에게' ,
-              members: [{ pos: 'Vocal', name: '이호재' }, { pos: 'Drum', name: '이진서' }, { pos: 'Piano', name: '홍은택' }, {
+      id: 'special', cat: 'Special Session Teacher', fbKey: 'Special', members: ['김하나린(Vocal)', '홍은택(Piano)', '박성환(Guitar)', '김윤상(Bass)']
+    },]; const setlist1 = [{
+      title: '그대에게',
+      members: [{ pos: 'Vocal', name: '이호재' }, { pos: 'Drum', name: '이진서' }, { pos: 'Piano', name: '홍은택' }, {
         pos: 'Guitar', name: '박성환, 테디'
-      }, { pos: 'Bass', name: '최예준' }] }, {
+      }, { pos: 'Bass', name: '최예준' }]
+    }, {
       title: 'romeo n juliet', members:
         [{ pos: 'Vocal', name: '김하나린, 용복동' }, { pos: 'Drum', name: '정민기' }, { pos: 'Piano', name: '이다솔' }, {
           pos: 'Guitar', name: '박성환'
@@ -335,7 +337,7 @@
       title: '너라는 별', members: [{
         pos: 'Vocal', name: '송세린'
       }, { pos: 'Drum', name: '박태훈' }, { pos: 'Piano', name: '윤선웅' }, {
-        pos: 'Guitar', name: '나성현, 최웅'
+        pos: 'Guitar', name: '나성현, 테디'
       }, { pos: 'Bass', name: '송승환' }]
     }, {
       title: '비밀번호 486', members: [{
@@ -451,7 +453,7 @@
       s.style.cssText = `left:${(Math.random() * 100).toFixed(2)}%;top:${(Math.random() *
         100).toFixed(2)}%;width:${size.toFixed(2)}px;height:${size.toFixed(2)}px;--dur:${dur}s;--delay:${del}s;`;
       canvas.appendChild(s);
-    } }) (); // ── CAST GRID RENDER ─────────────────────────────────
+    })(); // ── CAST GRID RENDER ─────────────────────────────────
     castData.forEach(function (cat) {
       const grid = document.getElementById('cast-' + cat.id); if (!grid) return;
       cat.members.forEach(function (name) {
