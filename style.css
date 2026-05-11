@@ -172,6 +172,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 @media(min-width:768px){ .cast-leads { gap: 4rem; } }
 
+.cast-leads-row {
+  display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; width: 100%;
+}
+@media(min-width:768px){ .cast-leads-row { gap: 6rem; } }
+
 .cast-lead-item {
   display: flex; flex-direction: column; align-items: center; gap: 1rem;
   cursor: pointer;

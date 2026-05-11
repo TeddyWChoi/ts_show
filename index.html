@@ -63,7 +63,7 @@
                 <span class="cast-sub">태성실용음악학원 원장</span>
               </div>
             </div>
-            <div class="cast-mc-group" style="display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;">
+            <div class="cast-leads-row">
               <div class="cast-lead-item" onclick="openModal('images/박용신_선생님.webp','박용신','MC')">
                 <div class="cast-avatar">
                   <img src="images/박용신_선생님.webp" alt="박용신"
@@ -200,8 +200,7 @@
           <div class="map-container">
             <!-- * 카카오맵 - 지도퍼가기 -->
             <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1778475060821" class="root_daum_roughmap root_daum_roughmap_landing"
-              style="background: #eee;"></div>
+            <div id="daumRoughmapContainer1778475060821" class="root_daum_roughmap root_daum_roughmap_landing"></div>
 
             <!--
 	2. 설치 스크립트
@@ -277,193 +276,132 @@
   <script>
     // ── DATA ─────────────────────────────────────────────
     const fallbackImgs = {
-      Vocal: ' images/1581304118739.webp', Drum: 'images/1581304118739.webp', Piano: 'images/1581304118739.webp',
-      Guitar: 'images/1581304118739.webp', Bass: 'images/1581304118739.webp',
+      Vocal: 'images/1581304118739.webp',
+      Drum: 'images/1581304118739.webp',
+      Piano: 'images/1581304118739.webp',
+      Guitar: 'images/1581304118739.webp',
+      Bass: 'images/1581304118739.webp',
       Special: 'images/1581304118739.webp',
-    }; const memberImgMap = {
-      '박용신': 'images/박용신_선생님.webp', '테디'
-        : 'images/teddy_3-1.webp', '김하나린 (Vocal)': 'images/kim_hanarin.webp', '박성환 (Guitar)'
-        : 'images/박성환_선생님.webp', '김윤상 (Bass)': 'images/김윤상_선생님.webp', '강유겸': 'images/강유겸_(피아노).webp', '강효린'
-        : 'images/강효린_(기타).webp', '김민정': 'images/김민정_(기타).webp', '김유준': 'images/김유준_(드럼).webp', '김준현'
-        : 'images/김준현_(피아노).webp', '김지유': 'images/김지유_(드럼).webp', '나성현': 'images/나성현_(기타).webp', '김정혜'
-        : 'images/김정혜_(드럼).webp', '박지은': 'images/박지은(피아노).webp', '박태훈': 'images/박태훈(드럼).webp', '서예지'
-        : 'images/서예지(베이스).webp', '손지우': 'images/손지우(기타).webp', '송승환': 'images/송승환(베이스).webp', '신준환'
-        : 'images/신준환(미디).webp', '심교임': 'images/심교임(드럼).webp', '양지웅': 'images/양지웅(드럼).webp', '염미자'
-        : 'images/염미자(드럼).webp', '오율도': 'images/오율도(베이스).webp', '용복동': 'images/용복동(보컬).webp', '유정욱'
-        : 'images/유정욱(베이스).webp', '이다솔': 'images/이다솔(보컬).webp', '이서윤': 'images/이서윤(드럼).webp', '이지영'
-        : 'images/이지영(드럼).webp', '이호재': 'images/이호재(보컬).webp', '정민기': 'images/정민기(드럼).webp', '최아윤'
-        : 'images/최아윤(보컬).webp', '최예준': 'images/최예준(베이스).webp', '최한빈': 'images/최한빈(드럼).webp', '추성민'
-        : 'images/추성민(드럼).webp', '한현미': 'images/한현미(드럼).webp', '홍아인': 'images/홍아인(보컬).webp', '홍은택 (Piano)'
-        : 'images/홍은택.webp',
-    }; const castData = [{
-      id: 'vocal', cat: 'Vocal', fbKey: 'Vocal', members:
-        ['송세린', '박용신', '박태훈', '박최완', '신준환', '용복동', '이다솔', '이호재', '테디', '최아윤', '최예준', '홍아인']
-    }, {
-      id: 'drum', cat: 'Drum', fbKey: 'Drum', members: ['김유준', '김정혜', '김지유', '김태형', '박태훈', '심교임', '양지웅'
-        , '염미자', '윤진석', '이서윤', '이지영', '이진서', '장용석', '정민기', '정용석', '추성민', '최한빈', '한현미']
-    }, {
-      id: 'piano'
-      , cat: 'Piano', fbKey: 'Piano', members: ['강유겸', '김준현', '박지은', '윤선웅', '이다솔']
-    }, {
-      id: 'guitar',
-      cat: 'Guitar', fbKey: 'Guitar', members: ['강효린', '김민정', '김유건', '나성현', '손지우', '윤진석', '테디']
-    }, {
-      id: 'bass', cat: 'Bass', fbKey: 'Bass', members: ['서예지', '송승환', '오율도', '유정욱', '이민준', '최예준']
-    }, {
-      id: 'special', cat: 'Special Session Teacher', fbKey: 'Special', members: ['김하나린(Vocal)', '홍은택(Piano)', '박성환(Guitar)', '김윤상(Bass)']
-    },]; const setlist1 = [{
-      title: '그대에게',
-      members: [{ pos: 'Vocal', name: '이호재' }, { pos: 'Drum', name: '이진서' }, { pos: 'Piano', name: '홍은택' }, {
-        pos: 'Guitar', name: '박성환, 테디'
-      }, { pos: 'Bass', name: '최예준' }]
-    }, {
-      title: 'romeo n juliet', members:
-        [{ pos: 'Vocal', name: '김하나린, 용복동' }, { pos: 'Drum', name: '정민기' }, { pos: 'Piano', name: '이다솔' }, {
-          pos: 'Guitar', name: '박성환'
-        }, { pos: 'Bass', name: '유정욱' }]
-    }, {
-      title: 'Glory day', members: [{
-        pos: 'Vocal', name: '신준환'
-      }, { pos: 'Drum', name: '김예형' }, { pos: 'Piano', name: '홍은택' }, {
-        pos: 'Guitar', name: '박성환, 강효린'
-      }, { pos: 'Bass', name: '이민준' }]
-    }, {
-      title: '비와 당신', members: [{
-        pos: 'Vocal', name: '테디'
-      }, { pos: 'Drum', name: '정용석' }, { pos: 'Piano', name: '박지은' }, {
-        pos: 'Guitar', name: '박성환, 테디'
-      }, { pos: 'Bass', name: '서예지' }]
-    }, {
-      title: '너라는 별', members: [{
-        pos: 'Vocal', name: '송세린'
-      }, { pos: 'Drum', name: '박태훈' }, { pos: 'Piano', name: '윤선웅' }, {
-        pos: 'Guitar', name: '나성현, 테디'
-      }, { pos: 'Bass', name: '송승환' }]
-    }, {
-      title: '비밀번호 486', members: [{
-        pos: 'Vocal', name: '최아윤, 홍아인'
-      }, { pos: 'Drum', name: '김지유' }, { pos: 'Piano', name: '홍은택' }, {
-        pos: 'Guitar', name: '나성현, 박성환'
-      }, { pos: 'Bass', name: '김윤상' }]
-    }, {
-      title: '예뻤어', members: [{
-        pos: 'Vocal', name: '이다솔'
-      }, { pos: 'Drum', name: '추성민' }, { pos: 'Piano', name: '강유겸' }, {
-        pos: 'Guitar', name: '박성환, 강효린'
-      }, { pos: 'Bass', name: '서예지' }]
-    }, {
-      title: '빵빵한 내 청춘', members: [{
-        pos: 'Vocal', name: '테디'
-      }, { pos: 'Drum', name: '한현미' }, { pos: 'Piano', name: '홍은택' }, {
-        pos: 'Guitar', name: '박성환'
-      }, { pos: 'Bass', name: '김윤상' }]
-    }, {
-      title: '동반자', members: [{
-        pos: 'Vocal'
-        , name: '신준환'
-      }, { pos: 'Drum', name: '염미자' }, { pos: 'Piano', name: '홍은택' }, {
-        pos: 'Guitar',
-        name: '박성환'
-      }, { pos: 'Bass', name: '김윤상' }]
-    }, {
-      title: '사랑하게 될거야', members: [{
-        pos: 'Vocal',
-        name: '최아윤'
-      }, { pos: 'Drum', name: '최한빈' }, { pos: 'Guitar', name: '김유건, 테디' }, {
-        pos: 'Bass',
-        name: '오율도'
-      }]
-    },]; const setlist2 = [{
-      title: '사람이 꽃보다 아름다워', members: [{ pos: 'Vocal', name: '테디' }, {
-        pos: 'Drum', name: '김정혜'
-      }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환' }, {
-        pos: 'Bass', name: '김윤상'
-      }]
-    }, {
-      title: '나야나', members: [{ pos: 'Vocal', name: '박최완' }, {
-        pos: 'Drum',
-        name: '장용석'
-      }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환' }, {
-        pos: 'Bass',
-        name: '김윤상'
-      }]
-    }, {
-      title: 'Love me or leave me', members: [{ pos: 'Vocal', name: '박용신' }, {
-        pos: 'Drum'
-        , name: '이지영'
-      }, { pos: 'Piano', name: '김준현, 홍은택' }, { pos: 'Guitar', name: '박성환, 윤진석' }, {
-        pos: 'Bass'
-        , name: '김윤상'
-      }]
-    }, {
-      title: '너에게 닿기를', members: [{ pos: 'Vocal', name: '이호재' }, {
-        pos: 'Drum',
-        name: '이서윤'
-      }, { pos: 'Piano', name: '박지은' }, { pos: 'Guitar', name: '나성현, 김민정' }, {
-        pos: 'Bass',
-        name: '오율도'
-      }]
-    }, {
-      title: '너에게 난 나에게 넌', members: [{ pos: 'Vocal', name: '이다솔' }, {
-        pos: 'Drum',
-        name: '심교임'
-      }, { pos: 'Piano', name: '이다솔' }, { pos: 'Guitar', name: '박성환, 강효린' }, {
-        pos: 'Bass',
-        name: '유정욱'
-      }]
-    }, {
-      title: 'This Love', members: [{ pos: 'Vocal', name: '용복동' }, {
-        pos: 'Drum',
-        name: '윤진석'
-      }, { pos: 'Piano', name: '강유겸' }, { pos: 'Guitar', name: '박성환, 강효린' }, {
-        pos: 'Bass',
-        name: '김윤상'
-      }]
-    }, {
-      title: '위잉위잉', members: [{ pos: 'Vocal', name: '최예준' }, {
-        pos: 'Drum', name: '양지웅'
-      }, { pos: 'Guitar', name: '강효린, 손지우' }, { pos: 'Bass', name: '유정욱' }]
-    }, {
-      title: 'O+O', members: [{
-        pos: 'Vocal', name: '이다솔'
-      }, { pos: 'Drum', name: '정민기' }, { pos: 'Piano', name: '김준현' }, {
-        pos: 'Guitar', name: '강효린'
-      }, { pos: 'Bass', name: '최예준' }]
-    }, {
-      title: '고민중독', members: [{
-        pos: 'Vocal', name: '최아윤'
-      }, { pos: 'Drum', name: '김유준' }, { pos: 'Piano', name: '홍은택' }, {
-        pos: 'Guitar', name: '강효린, 나성현'
-      }, { pos: 'Bass', name: '김윤상' }]
-    }, {
-      title: 'Hollywood Movie star',
-      members: [{ pos: 'Vocal', name: '용복동' }, { pos: 'Drum', name: '정민기' }, { pos: 'Guitar', name: '강효린' },
-      { pos: 'Bass', name: '유정욱' }]
-    }, {
-      title: 'Hi Bully', members: [{ pos: 'Vocal', name: '김하나린' }, {
-        pos: 'Drum', name: '박태훈'
-      }, { pos: 'Piano', name: '김준현, 홍은택' }, { pos: 'Guitar', name: '박성환, 강효린' }, {
-        pos: 'Bass', name: '송승환'
-      }]
-    },]; 
-    // ── STARS ──────────────────────────────────────────── 
+    };
+
+    const memberImgMap = {
+      '박용신': 'images/박용신_선생님.webp',
+      '테디': 'images/teddy_3-1.webp',
+      '김하나린 (Vocal)': 'images/kim_hanarin.webp',
+      '박성환 (Guitar)': 'images/박성환_선생님.webp',
+      '김윤상 (Bass)': 'images/김윤상_선생님.webp',
+      '강유겸': 'images/강유겸_(피아노).webp',
+      '강효린': 'images/강효린_(기타).webp',
+      '김민정': 'images/김민정_(기타).webp',
+      '김유준': 'images/김유준_(드럼).webp',
+      '김준현': 'images/김준현_(피아노).webp',
+      '김지유': 'images/김지유_(드럼).webp',
+      '나성현': 'images/나성현_(기타).webp',
+      '김정혜': 'images/김정혜_(드럼).webp',
+      '박지은': 'images/박지은(피아노).webp',
+      '박태훈': 'images/박태훈(드럼).webp',
+      '서예지': 'images/서예지(베이스).webp',
+      '손지우': 'images/손지우(기타).webp',
+      '송승환': 'images/송승환(베이스).webp',
+      '신준환': 'images/신준환(미디).webp',
+      '심교임': 'images/심교임(드럼).webp',
+      '양지웅': 'images/양지웅(드럼).webp',
+      '염미자': 'images/염미자(드럼).webp',
+      '오율도': 'images/오율도(베이스).webp',
+      '용복동': 'images/용복동(보컬).webp',
+      '유정욱': 'images/유정욱(베이스).webp',
+      '이다솔': 'images/이다솔(보컬).webp',
+      '이서윤': 'images/이서윤(드럼).webp',
+      '이지영': 'images/이지영(드럼).webp',
+      '이호재': 'images/이호재(보컬).webp',
+      '정민기': 'images/정민기(드럼).webp',
+      '최아윤': 'images/최아윤(보컬).webp',
+      '최예준': 'images/최예준(베이스).webp',
+      '최한빈': 'images/최한빈(드럼).webp',
+      '추성민': 'images/추성민(드럼).webp',
+      '한현미': 'images/한현미(드럼).webp',
+      '홍아인': 'images/홍아인(보컬).webp',
+      '홍은택 (Piano)': 'images/홍은택.webp',
+    };
+
+    const castData = [
+      {
+        id: 'vocal', cat: 'Vocal', fbKey: 'Vocal',
+        members: ['송세린', '박용신', '박태훈', '박최완', '신준환', '용복동', '이다솔', '이호재', '테디', '최아윤', '최예준', '홍아인']
+      },
+      {
+        id: 'drum', cat: 'Drum', fbKey: 'Drum',
+        members: ['김유준', '김정혜', '김지유', '김태형', '박태훈', '심교임', '양지웅', '염미자', '윤진석', '이서윤', '이지영', '이진서', '장용석', '정민기', '정용석', '추성민', '최한빈', '한현미']
+      },
+      {
+        id: 'piano', cat: 'Piano', fbKey: 'Piano',
+        members: ['강유겸', '김준현', '박지은', '윤선웅', '이다솔']
+      },
+      {
+        id: 'guitar', cat: 'Guitar', fbKey: 'Guitar',
+        members: ['강효린', '김민정', '김유건', '나성현', '손지우', '윤진석', '테디', '최웅']
+      },
+      {
+        id: 'bass', cat: 'Bass', fbKey: 'Bass',
+        members: ['서예지', '송승환', '오율도', '유정욱', '이민준', '최예준']
+      },
+      {
+        id: 'special', cat: 'Special Session Teacher', fbKey: 'Special',
+        members: ['김하나린 (Vocal)', '홍은택 (Piano)', '박성환 (Guitar)', '김윤상 (Bass)']
+      },
+    ];
+
+    const setlist1 = [
+      { title: '그대에게', members: [{ pos: 'Vocal', name: '이호재' }, { pos: 'Drum', name: '이진서' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환, 테디' }, { pos: 'Bass', name: '최예준' }] },
+      { title: 'romeo n juliet', members: [{ pos: 'Vocal', name: '김하나린, 용복동' }, { pos: 'Drum', name: '정민기' }, { pos: 'Piano', name: '이다솔' }, { pos: 'Guitar', name: '박성환' }, { pos: 'Bass', name: '유정욱' }] },
+      { title: 'Glory day', members: [{ pos: 'Vocal', name: '신준환' }, { pos: 'Drum', name: '김예형' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환, 강효린' }, { pos: 'Bass', name: '이민준' }] },
+      { title: '비와 당신', members: [{ pos: 'Vocal', name: '테디' }, { pos: 'Drum', name: '정용석' }, { pos: 'Piano', name: '박지은' }, { pos: 'Guitar', name: '박성환, 테디' }, { pos: 'Bass', name: '서예지' }] },
+      { title: '너라는 별', members: [{ pos: 'Vocal', name: '송세린' }, { pos: 'Drum', name: '박태훈' }, { pos: 'Piano', name: '윤선웅' }, { pos: 'Guitar', name: '나성현, 최웅' }, { pos: 'Bass', name: '송승환' }] },
+      { title: '비밀번호 486', members: [{ pos: 'Vocal', name: '최아윤, 홍아인' }, { pos: 'Drum', name: '김지유' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '나성현, 박성환' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: '예뻤어', members: [{ pos: 'Vocal', name: '이다솔' }, { pos: 'Drum', name: '추성민' }, { pos: 'Piano', name: '강유겸' }, { pos: 'Guitar', name: '박성환, 강효린' }, { pos: 'Bass', name: '서예지' }] },
+      { title: '빵빵한 내 청춘', members: [{ pos: 'Vocal', name: '테디' }, { pos: 'Drum', name: '한현미' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: '동반자', members: [{ pos: 'Vocal', name: '신준환' }, { pos: 'Drum', name: '염미자' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: '사랑하게 될거야', members: [{ pos: 'Vocal', name: '최아윤' }, { pos: 'Drum', name: '최한빈' }, { pos: 'Guitar', name: '김유건, 테디' }, { pos: 'Bass', name: '오율도' }] },
+    ];
+
+    const setlist2 = [
+      { title: '사람이 꽃보다 아름다워', members: [{ pos: 'Vocal', name: '테디' }, { pos: 'Drum', name: '김정혜' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: '나야나', members: [{ pos: 'Vocal', name: '박최완' }, { pos: 'Drum', name: '장용석' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '박성환' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: 'Love me or leave me', members: [{ pos: 'Vocal', name: '박용신' }, { pos: 'Drum', name: '이지영' }, { pos: 'Piano', name: '김준현, 홍은택' }, { pos: 'Guitar', name: '박성환, 윤진석' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: '너에게 닿기를', members: [{ pos: 'Vocal', name: '이호재' }, { pos: 'Drum', name: '이서윤' }, { pos: 'Piano', name: '박지은' }, { pos: 'Guitar', name: '나성현, 김민정' }, { pos: 'Bass', name: '오율도' }] },
+      { title: '너에게 난 나에게 넌', members: [{ pos: 'Vocal', name: '이다솔' }, { pos: 'Drum', name: '심교임' }, { pos: 'Piano', name: '이다솔' }, { pos: 'Guitar', name: '박성환, 강효린' }, { pos: 'Bass', name: '유정욱' }] },
+      { title: 'This Love', members: [{ pos: 'Vocal', name: '용복동' }, { pos: 'Drum', name: '윤진석' }, { pos: 'Piano', name: '강유겸' }, { pos: 'Guitar', name: '박성환, 강효린' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: '위잉위잉', members: [{ pos: 'Vocal', name: '최예준' }, { pos: 'Drum', name: '양지웅' }, { pos: 'Guitar', name: '강효린, 손지우' }, { pos: 'Bass', name: '유정욱' }] },
+      { title: 'O+O', members: [{ pos: 'Vocal', name: '이다솔' }, { pos: 'Drum', name: '정민기' }, { pos: 'Piano', name: '김준현' }, { pos: 'Guitar', name: '강효린' }, { pos: 'Bass', name: '최예준' }] },
+      { title: '고민중독', members: [{ pos: 'Vocal', name: '최아윤' }, { pos: 'Drum', name: '김유준' }, { pos: 'Piano', name: '홍은택' }, { pos: 'Guitar', name: '강효린, 나성현' }, { pos: 'Bass', name: '김윤상' }] },
+      { title: 'Hollywood Movie star', members: [{ pos: 'Vocal', name: '용복동' }, { pos: 'Drum', name: '정민기' }, { pos: 'Guitar', name: '강효린' }, { pos: 'Bass', name: '유정욱' }] },
+      { title: 'Hi Bully', members: [{ pos: 'Vocal', name: '김하나린' }, { pos: 'Drum', name: '박태훈' }, { pos: 'Piano', name: '김준현, 홍은택' }, { pos: 'Guitar', name: '박성환, 강효린' }, { pos: 'Bass', name: '송승환' }] },
+    ];
+
+    // ── STARS ────────────────────────────────────────────
     (function () {
-    const canvas = document.getElementById('star-canvas'); for (let i = 0; i < 80; i++) {
-      const
-        s = document.createElement('div'); s.className = 'star'; const size = Math.random() * 1.5 + 0.5; const
-          dur = (Math.random() * 4 + 3).toFixed(2); const del = (Math.random() * 5).toFixed(2);
-      s.style.cssText = `left:${(Math.random() * 100).toFixed(2)}%;top:${(Math.random() *
-        100).toFixed(2)}%;width:${size.toFixed(2)}px;height:${size.toFixed(2)}px;--dur:${dur}s;--delay:${del}s;`;
-      canvas.appendChild(s);
-    })(); // ── CAST GRID RENDER ─────────────────────────────────
+      const canvas = document.getElementById('star-canvas');
+      for (let i = 0; i < 80; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const size = Math.random() * 1.5 + 0.5;
+        const dur = (Math.random() * 4 + 3).toFixed(2);
+        const del = (Math.random() * 5).toFixed(2);
+        s.style.cssText = `left:${(Math.random() * 100).toFixed(2)}%;top:${(Math.random() * 100).toFixed(2)}%;width:${size.toFixed(2)}px;height:${size.toFixed(2)}px;--dur:${dur}s;--delay:${del}s;`;
+        canvas.appendChild(s);
+      }
+    })();
+
+    // ── CAST GRID RENDER ─────────────────────────────────
     castData.forEach(function (cat) {
-      const grid = document.getElementById('cast-' + cat.id); if (!grid) return;
+      const grid = document.getElementById('cast-' + cat.id);
+      if (!grid) return;
       cat.members.forEach(function (name) {
-        const img = memberImgMap[name] || fallbackImgs[cat.fbKey]; const
-          el = document.createElement('div'); el.className = 'cast-member'; el.setAttribute('onclick',
-            `openModal('${img}','${name}','${cat.cat}')`); el.innerHTML = `<div class="member-avatar"><img src="${img}"
-                alt="${name}" onerror="this.src='${fallbackImgs[cat.fbKey]}'" /></div><span
-              class="member-name">${name}</span>`;
+        const img = memberImgMap[name] || fallbackImgs[cat.fbKey];
+        const el = document.createElement('div');
+        el.className = 'cast-member';
+        el.setAttribute('onclick', `openModal('${img}','${name}','${cat.cat}')`);
+        el.innerHTML = `<div class="member-avatar"><img src="${img}" alt="${name}" onerror="this.src='${fallbackImgs[cat.fbKey]}'" /></div><span class="member-name">${name}</span>`;
         grid.appendChild(el);
       });
     });
@@ -474,17 +412,9 @@
       data.forEach(function (song, idx) {
         const num = String(idx + 1).padStart(2, '0');
         const tags = song.members.map(function (m) {
-          return `<div class="song-member-tag"><span class="pos">${m.pos}</span><span class="name">${m.name}</span>
-            </div>`;
+          return `<div class="song-member-tag"><span class="pos">${m.pos}</span><span class="name">${m.name}</span></div>`;
         }).join('');
-        el.innerHTML += `<div class="song-card reveal">
-              <div class="song-card-bar"></div>
-              <div class="song-number">${num}</div>
-              <div class="song-body">
-                <h3 class="song-title">${song.title}</h3>
-                <div class="song-members">${tags}</div>
-              </div>
-            </div>`;
+        el.innerHTML += `<div class="song-card reveal"><div class="song-card-bar"></div><div class="song-number">${num}</div><div class="song-body"><h3 class="song-title">${song.title}</h3><div class="song-members">${tags}</div></div></div>`;
       });
     }
     renderSetlist(setlist1, 'setlist1');
