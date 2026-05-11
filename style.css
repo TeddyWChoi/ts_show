@@ -426,6 +426,56 @@ footer p { margin-bottom: 0.5rem; }
 @media(min-width:768px){ .footer-divider { display: inline; } }
 footer .copyright { font-size: 0.75rem; color: #3f3f46; }
 
+/* ===== INFO SECTION (LOCATION & GUIDELINES) ===== */
+.info-section {
+  width: 100%; padding: 4rem 0 6rem;
+  background: transparent; position: relative;
+}
+.info-block {
+  background: rgba(4,6,10,0.6);
+  border: 1px solid rgba(19,27,47,0.8);
+  border-radius: 1rem; padding: 2rem;
+  margin-bottom: 3rem;
+}
+@media(min-width:768px){ .info-block { padding: 3rem; } }
+.info-block:last-child { margin-bottom: 0; }
+
+.location-name {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.5rem; font-weight: 700; color: #f4f4f5;
+  margin-bottom: 0.5rem;
+}
+.location-desc {
+  font-size: 1rem; color: #d4d4d8; margin-bottom: 0.5rem;
+}
+.location-notice {
+  font-size: 0.875rem; color: #ef4444; margin-bottom: 1.5rem;
+}
+
+.map-container {
+  width: 100%; border-radius: 0.5rem; overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.3);
+}
+
+/* Override kakao map width */
+.root_daum_roughmap { width: 100% !important; }
+
+.guidelines-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.guidelines-list li {
+  position: relative; padding-left: 1.5rem;
+  color: #a1a1aa; font-size: 0.9375rem; line-height: 1.5;
+}
+.guidelines-list li::before {
+  content: '•'; position: absolute; left: 0; top: 0;
+  color: #d4af37; font-size: 1.2rem; line-height: 1.2;
+}
+.guidelines-list li strong {
+  display: block; color: #d4d4d8; font-weight: 500; margin-bottom: 0.25rem;
+}
+
 /* ===== ANIMATION HELPERS ===== */
 @keyframes fade-up {
   from { opacity:0; transform:translateY(20px); }
